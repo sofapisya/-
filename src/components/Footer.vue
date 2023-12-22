@@ -7,23 +7,25 @@
         <p>ФИО: {{ FIO }}</p>
       </div>
       <div class="social-links">
+        <img src="../assets/VK.svg" />
         <a
           href="https://vk.com/pesyakova"
           target="_blank"
           rel="noopener noreferrer"
           >Вконтакте</a
         >
-        <img src="../assets/VK.svg" />
+
         <br />
+        <img src="../assets/Telegram.svg" />
         <a href="@sofapisya" target="_blank" rel="noopener noreferrer"
           >Telegram</a
         >
-        <img src="../assets/Telegram.svg" />
+
         <br />
+        <img src="../assets/YouTube.svg" />
         <a href="https://rutube.ru/" target="_blank" rel="noopener noreferrer"
           >Rutube</a
         >
-        <img src="../assets/YouTube.svg" />
       </div>
     </div>
     <p>&copy; 2023 Изучение иностранных языков. Все права защищены.</p>
@@ -49,10 +51,11 @@ footer.footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  height: 100px;
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 0px;
 }
 
 .footer-content {
@@ -60,7 +63,10 @@ footer.footer {
   justify-content: space-between;
   align-items: center;
 }
-
+img {
+  height: 15px;
+  weight: 15px;
+}
 .contact-info {
   text-align: left;
 }
