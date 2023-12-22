@@ -47,6 +47,7 @@ export default {
 <style scoped>
 /* Стили для вашего футера */
 footer.footer {
+  z-index: 1;
   position: fixed;
   left: 0;
   bottom: 0;

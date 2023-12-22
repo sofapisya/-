@@ -6,7 +6,7 @@
       <ul>
         Изучение иностранных языков
       </ul>
-      <div style="display: flex;justify-content: space-between;width: 100%">
+      <div style="display: flex; justify-content: space-between; width: 100%">
         <li><router-link to="/">Главная</router-link></li>
         <li><router-link to="/languages">Все языки</router-link></li>
         <li class="dropdown">
@@ -24,21 +24,21 @@
 
 <script>
 export default {
-  data() {
-  },
+  data() {},
 };
 </script>
 
 <style scoped>
 /* Стили, специфичные для этого компонента */
 ul {
+  z-index: 1;
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: space-around; /* Размещаем элементы по горизонтали с равным отступом */
   background-color: #333333;
-  position: fixed; /* Изменили на absolute */
+  position: fixed;
   top: 0;
   width: 100%; /* Занимаем всю ширину страницы */
   left: 50%; /* размещаем посередине */
@@ -47,8 +47,7 @@ ul {
 
 li {
   padding: 25px;
-  border-right: 1px solid #747ed4;
-  cursor: pointer;
+  border-right: 1px;
   transition: color 0.3s; /* Добавляем плавное изменение цвета */
 }
 
@@ -63,6 +62,7 @@ li:last-child {
 /* Dropdown Button */
 .dropbtn {
   color: #646cfe;
+  background-color: #333333;
   padding: 16px;
   font-size: 16px;
   cursor: pointer;
@@ -72,8 +72,8 @@ li:last-child {
 .dropdown-content {
   display: none;
   position: absolute;
-
-  z-index: 1;
+  border-radius: 5px;
+  z-index: 2;
 }
 
 /* Links inside the dropdown */
@@ -85,17 +85,20 @@ li:last-child {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 
-
 @media (max-width: 600px) {
   li {
-    border-bottom: 1px solid #747ed4;
+    border-bottom: 1px solid #333333;
     border-right: none;
   }
 }

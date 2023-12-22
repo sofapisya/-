@@ -1,46 +1,62 @@
 <template>
-  <div style="display: flex;flex-direction: column">
+  <div style="display: flex; flex-direction: column">
     <div id="app" style="max-width: 1300px">
       <!-- Карусель -->
       <swiper :options="swiperOptions">
         <swiper-slide v-for="(image, index) in images" :key="index">
           <img :src="image" class="image" alt="Slide" />
         </swiper-slide>
-        <div class="swiper-pagination"  slot="pagination"></div>
+        <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-next" slot="button-next"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
       </swiper>
 
       <!-- Основное содержимое -->
       <div id="main-content">
-        <!-- Здесь будет основное содержимое вашего приложения -->
-        <router-view></router-view>
-      </div>
-    </div>
-    <div style="display: flex;flex-direction: column;padding: 20px;align-items: start">
-      <h3 style="font-weight: bold;">Записаться на занятие</h3>
-      <div style="display: flex;flex-direction: row;gap: 10px;">
-        <div class="input-box" style="display: flex;">
-          <input type="text" placeholder="Ваше имя" />
-        </div>
-        <div class="input-box" style="display: flex;">
-          <input type="text" placeholder="фамилия" />
-        </div>
-        <li class="dropdown" style="display: flex;">
-          <span class="dropbtn">Расписание</span>
-          <div class="dropdown-content">
-            <div>Английский</div>
-            <div>Французский</div>
-            <div>Испанский</div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            align-items: start;
+          "
+        >
+          <h3 style="font-weight: bold">Записаться на занятие</h3>
+          <div style="display: flex; flex-direction: row; gap: 10px">
+            <div class="input-box" style="display: flex">
+              <input type="text" placeholder="Ваше имя" />
+            </div>
+            <div class="input-box" style="display: flex">
+              <input type="text" placeholder="Фамилия" />
+            </div>
+            <select id="selectvalue">
+              <option>Английский</option>
+              <option>Французский</option>
+              <option>Испанский</option>
+            </select>
+
+            <button
+              style="
+                background-color: #1a1a1a;
+                border-radius: 10px;
+                max-width: 100px;
+                max-height: 30px;
+                text-align: center;
+                justify-content: center;
+                margin-top: 0;
+                margin-bottom: 0;
+                align-items: center;
+              "
+            >
+              <h5 style="color: white; margin-top: -6px; margin-left: -6px">
+                Записаться
+              </h5>
+            </button>
           </div>
-        </li>
-        <button style="background-color: #1a1a1a;border-radius: 10px;max-width: 100px;max-height: 30px;text-align: center;justify-content: center;margin-top: 0;margin-bottom: 0; align-items: center">
-          <h5 style="color: white;margin-top: 0;margin-bottom: 0;">Записаться</h5>
-        </button>
+          <h5>Позже с вами свяжутся</h5>
+        </div>
       </div>
-      <h4>
-        Чуть позже с вами свяжутся
-      </h4>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -85,27 +101,19 @@ export default {
 }
 .image {
   weight: 300px;
+  z-index: 0;
   height: 300px;
 }
 #main-content {
   flex-grow: 1;
   padding: 20px;
+  z-index: 1;
   margin-bottom: 100px;
-}
-
-/* Dropdown Button */
-.dropbtn {
-  background-color: #9b9b9b;
-  color: white;
-  font-size: 16px;
-  border: none; /* Убираем границы */
-  cursor: pointer;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -115,18 +123,4 @@ export default {
   z-index: 1;
   background-color: #9b9b9b;
 }
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #202020;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
 </style>
