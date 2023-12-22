@@ -17,7 +17,10 @@
 
         <br />
         <img src="../assets/Telegram.svg" />
-        <a href="@sofapisya" target="_blank" rel="noopener noreferrer"
+        <a
+          href="https://web.telegram.org/a/"
+          target="_blank"
+          rel="noopener noreferrer"
           >Telegram</a
         >
 
